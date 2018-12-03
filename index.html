@@ -151,7 +151,7 @@
     jsPsych.init({
         timeline: trials,
         on_finish: function () {
-            jQuery.post('./resources/php/save_data.php', {data: jsPsych.data.get().csv()}, function (response) {
+            jQuery.post('./resources/php/save_data.php', {type: "eflrpt", data: jsPsych.data.get().csv()}, function (response) {
                 console.log(response);
                 $(document).fullScreen(false);
                 window.location = "./";
